@@ -1,0 +1,17 @@
+.mengif{
+    background-image: url("./images/men.gif");
+    background-repeat: no-repeat, repeat;
+    background-size: 192px;
+    position: relative;
+    top:200px;
+    margin: auto;
+    height: 200px;
+    width: 132px;
+    background-repeat: no-repeat, repeat;    
+}
+.dashboard{
+    margin-left: 300px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}

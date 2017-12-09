@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import ChatBox from './ChatBox/chatbox.js';
 import Landing from './Landing/landing.js';
 import './App.css';
+import Dashboard from './Dashboard/Dashboard.js'
 
 const styles ={
   appstyle:{
@@ -21,7 +22,7 @@ class App extends Component {
     return (
       <div className="Container">
          <AppBar style={styles.appstyle} titleStyle ={styles.titleStyle} title="Insure Tech Hackathon" showMenuIconButton = {false} />
-        <div><Landing /></div>
+        <div className='chat_body'><ChatBox /><Dashboard /></div>
       </div>
     );
   }

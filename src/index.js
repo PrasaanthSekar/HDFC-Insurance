@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
+import {configureStore}  from './store'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {Provider} from 'react-redux'
+const store = configureStore()
+
 const muiTheme = getMuiTheme({
     appBar: {
         height: 50,
@@ -15,5 +18,5 @@ const muiTheme = getMuiTheme({
       primary1Color: '#009688',
     }
 });
-ReactDOM.render(<MuiThemeProvider muiTheme={muiTheme}><App /></MuiThemeProvider>, document.getElementById('root'));
+ReactDOM.render(<MuiThemeProvider muiTheme={muiTheme}>  <Provider store={store}><App /></Provider></MuiThemeProvider>, document.getElementById('root'));
 registerServiceWorker();

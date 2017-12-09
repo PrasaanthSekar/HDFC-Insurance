@@ -18,13 +18,36 @@ class ChatBox extends Component {
   }
   clearInput(e){
     let {messages,value} = this.state;
+    let self = this;
     var objDiv = document.getElementById("style-2");
-    console.log(objDiv.scrollHeight+22)
+    console.log(objDiv.scrollHeight+22);
     objDiv.scrollTop = objDiv.scrollHeight+22;
+    fetch("https://api.dialogflow.com/v1/query?v=f15fb805-8fba-4d7a-a3f0-265889c91648", {
+      method: 'post',
+      headers: {
+        "Content-type": "application/json",
+				"Authorization": "Bearer " + '01bd43f40a094b8bb016ba95509390d6'
+      },
+      body: JSON.stringify({ query: value, lang: "en", sessionId: "somerandomthing" }),
+    })
+    .then(function (response) {
+      if (response.status === 200) {
+        response.json().then(function(data) {
+          self.setState({
+              value:'',
+              messages:[...messages,(new Message({ id: 0, message: value })),(new Message({ id: 1, message: data.result.fulfillment.speech }))]
+            }) 
+          });
+      }
+    })
+    .catch(function (error) {
+      console.log('Request failed', error);
+    });
     this.setState({
       value:'',
       messages:[...messages,(new Message({ id: 0, message: value }))]
     }) 
+
 
   }
   render() {
