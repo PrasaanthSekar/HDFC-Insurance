@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux'
 import {CHANGE_CURRENT_PAGE} from '../Constants/actionTypes'
 function dashBoardReducers(state = {currrentPage:'index'}, action) {
-    console.log(action)
     switch(action.type){
         case CHANGE_CURRENT_PAGE :
         console.log(action)
