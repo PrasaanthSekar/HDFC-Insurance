@@ -1,11 +1,18 @@
 import { combineReducers } from 'redux'
-import {CHANGE_CURRENT_PAGE} from '../Constants/actionTypes'
-function dashBoardReducers(state = {currrentPage:'index'}, action) {
+import {CHANGE_CURRENT_PAGE,ADD_MESSAGE,CHANGE_IMAGE} from '../Constants/actionTypes'
+function dashBoardReducers(state = {currrentPage:'index',messages:[],parameters:null}, action) {
     switch(action.type){
         case CHANGE_CURRENT_PAGE :
-        console.log(action)
             return Object.assign({}, state, {
-                currrentPage: action.currrentPage
+                currrentPage: action.currrentPage,
+            });
+        case ADD_MESSAGE :
+            return Object.assign({}, state, {
+                messages: action.message,
+            });
+        case CHANGE_IMAGE:
+            return Object.assign({}, state, {
+                parameters: action.parameters,
             });
         default:
             return state;

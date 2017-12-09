@@ -1,5 +1,5 @@
 
-import { createStore } from 'redux'
+import { createStore ,applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger'
 
@@ -8,6 +8,9 @@ const loggerMiddleware = createLogger()
 
 export function configureStore(ss) {
   return createStore(
-    rootReducer
+    rootReducer,
+    applyMiddleware(
+      thunkMiddleware
+    )
   )
 }
