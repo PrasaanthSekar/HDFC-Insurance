@@ -1,0 +1,92 @@
+.banner{
+    height: 80vh;
+    background-image: url("./images/abstract.png");
+    background-size: cover;
+}
+.banner-text{
+    padding-top: 25vh;
+}
+.banner-text{
+    color: white;
+    padding-left: 10vw;
+    font-size: 50px;
+}
+.banner-content{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 30vh;
+    padding-left: 10vw;
+    padding-right: 10vw 
+}
+.btn-color{
+    background: #2F80ED !important;
+    margin-left: 10vw !important;
+    padding-bottom: 40px !important;
+    color: white !important;
+}
+.pre-footer{    
+    height: 25vh;
+    background: #303c42;
+}
+.pre-footer-text{
+    padding-top: 5vh;
+    font-size: 25px;
+    color: white
+}
+.footer-btn{
+    background: #2F80ED !important;
+    color: white !important;
+    padding-bottom: 10vh 
+}
+.footer-text{
+    background: #455a64;
+    height: 5vh;
+    padding-top: 20px;
+}
+.footer{
+    color: white;
+    padding-left: 20px
+}
+.main{
+    height : 40vh;
+    width : 100%;
+    background : #507eb6;
+}
+.sub{
+    position : relative;
+    top : -12vh;
+    padding-left: 30vw;
+    padding-right: 20vw;
+}
+.font{
+    font-size : 22px;
+    color : white;
+}
+.avatar-left{
+    position: relative;
+    left: 15vw;
+    top: 8vh;
+    background-image: url("./images/jjacks.jpg");
+    background-size: cover;
+}
+.avatar-right{
+    position: relative;
+    left: 70vw;
+    top: 8vh;
+    background-image: url("./images/aambasta.jpg");
+    background-size: cover;
+}
+.sub-right{
+    position : relative;
+    top : -12vh;
+    padding-left: 18vw;
+    padding-right: 30vw;   
+}
+.main-right{
+    margin-top: 1px;
+    margin-top: 1px solid white;
+    height : 40vh;
+    width : 100%;
+    background : #507eb6;
+}
