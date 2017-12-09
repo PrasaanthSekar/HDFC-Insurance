@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import { ChatFeed, Message } from 'react-chat-ui'
 import AppBar from 'material-ui/AppBar';
+import {connect} from 'react-redux';
 
 import ChatBox from './ChatBox/chatbox.js';
 import Landing from './Landing/landing.js';
@@ -18,14 +19,30 @@ const styles ={
   }
 }
 class App extends Component {
+  
   render() {
+      let {currrentPage,dispatch} = this.props;
+      let body;
+      switch(currrentPage){
+        case 'index':
+         body = <Landing dispatch={dispatch}/>
+         break;
+        case 'dashboard':
+          body =  <div className='chat_body'><ChatBox /><Dashboard /></div>
+          break;
+      }
     return (
       <div className="Container">
          <AppBar style={styles.appstyle} titleStyle ={styles.titleStyle} title="Insure Tech Hackathon" showMenuIconButton = {false} />
-        <div className='chat_body'><ChatBox /><Dashboard /></div>
+          {body}
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  const { dashBoardReducers } = state
+  const { currrentPage } = dashBoardReducers;
+  return { currrentPage }
+}
+export default connect(mapStateToProps)(App);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import Paper from 'material-ui/Paper';
-
+import {changePage} from '../Actions/dashboardAction'
 import './landing.css';
 
 const style = {
@@ -15,6 +15,7 @@ const style = {
 
 class Landing extends Component {
     render() {
+        let {dispatch} = this.props;
         return (
             <div className="Container">
                 <div className="banner">
@@ -23,7 +24,7 @@ class Landing extends Component {
                         <span className="banner-heading">Hackathon</span>
 
                         <span className="banner-content">Chat with our new interative bot to know more about our insurance policies with our new interactive experience. Click on try now to enter an all new experience</span>
-                        <FlatButton className="btn-color" label="Try now" />
+                        <FlatButton className="btn-color" onClick={() => dispatch(changePage('dashboard'))}  label="Try now" />
                     </div>
                 </div>
                 <div class="main">
