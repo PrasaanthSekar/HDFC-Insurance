@@ -15,7 +15,7 @@ const muiTheme = getMuiTheme({
     },
     fontFamily: 'Roboto, sans-serif',
     palette: {
-      primary1Color: '#009688',
+      primary1Color: '#026d40',
     }
 });
 ReactDOM.render(<MuiThemeProvider muiTheme={muiTheme}>  <Provider store={store}><App /></Provider></MuiThemeProvider>, document.getElementById('root'));
