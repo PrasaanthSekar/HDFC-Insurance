@@ -43,8 +43,8 @@ class ChatBox extends Component {
                 fontSize: 12
               },
               chatbubble: {
-                borderRadius: 10,
-                padding: 10
+                borderRadius: 5,
+                padding: 5
               }
             }
           }

@@ -8,7 +8,7 @@ import {
 
 const API_URL = 'https://api.dialogflow.com/v1/query?v=f15fb805-8fba-4d7a-a3f0-265889c91648';
 const API_KEY = '01bd43f40a094b8bb016ba95509390d6';
-const SESSION_ID = 'somerandomthing'
+const SESSION_ID = 'somerandommbvth.ibng'
 
 
 export function changePage(currrentPage) {

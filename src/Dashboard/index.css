@@ -1,15 +1,30 @@
-.mengif{
-    background-image: url("./images/men.gif");
+.mengif,.marriedCouple,.singlemale,.singlefemale {
     background-repeat: no-repeat, repeat;
-    background-size: 192px;
+    background-size: 404px;
     position: relative;
-    top:200px;
+    top: 200px;
     margin: auto;
-    height: 200px;
-    width: 132px;
-    background-repeat: no-repeat, repeat;    
+    height: 300px;
+    width: 350px;
+    background-repeat: no-repeat, repeat;
 }
-.dashboard{
+
+.mengif {
+    background-image: url("./images/single.png");
+}
+.singlemale{
+    background-size: 150px;
+    background-image: url("./images/single.png");
+}
+.singlefemale{
+    background-size: 100px;
+    background-image: url("./images/women.png");
+}
+.marriedCouple {
+    background-image: url("./images/marredcouple.png");
+}
+
+.dashboard {
     margin-left: 300px;
     position: fixed;
     height: 100%;
