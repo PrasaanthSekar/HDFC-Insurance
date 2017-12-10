@@ -20,7 +20,7 @@ const styles ={
 }
 class App extends Component {  
   render() {
-      let {currrentPage,dispatch} = this.props;
+      let {currrentPage,dispatch,parameters} = this.props;
       let body;
       switch(currrentPage){
         case 'index':
@@ -30,7 +30,7 @@ class App extends Component {
           body =  <div className='chat_body'><ChatBox /><Dashboard  dispatch={dispatch}/></div>
           break;
         case 'policyInfo':
-          body = <PolicyInfo dispatch={dispatch}/>
+          body = <PolicyInfo parameters={parameters} dispatch={dispatch}/>
           break;
       }
     return (
@@ -44,7 +44,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   const { dashBoardReducers } = state
-  const { currrentPage } = dashBoardReducers;
+  const { currrentPage ,parameters} = dashBoardReducers;
   return { currrentPage }
 }
 export default connect(mapStateToProps)(App);
