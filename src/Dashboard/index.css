@@ -8,7 +8,13 @@
     width: 350px;
     background-repeat: no-repeat, repeat;
 }
-
+.cartoon_img{
+    padding-top: 100px;
+    height: 410px;
+    margin: auto;
+    display: block;
+    padding-right: 154px;
+}
 .mengif {
     background-image: url("./images/single.png");
 }
