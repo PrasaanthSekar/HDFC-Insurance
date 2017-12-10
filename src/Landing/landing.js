@@ -45,7 +45,7 @@ class Landing extends Component {
                 </div>
                 <div className="pre-footer">
                     <center className="pre-footer-text">Get started today</center><br />
-                    <center><FlatButton className="footer-btn" label="Try now" /></center>
+                    <center><FlatButton className="footer-btn" onClick={() => dispatch(changePage('dashboard'))} label="Try now" /></center>
                 </div>
                 <div className="footer-text">
                     <span className="footer">Terms and Privacy | Third-Party Licenses</span>

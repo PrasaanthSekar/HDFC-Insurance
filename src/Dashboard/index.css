@@ -15,22 +15,12 @@
     display: block;
     padding-right: 154px;
 }
-.mengif {
-    background-image: url("./images/single.png");
-}
-.singlemale{
-    background-size: 150px;
-    background-image: url("./images/single.png");
-}
-.singlefemale{
-    background-size: 100px;
-    background-image: url("./images/women.png");
-}
-
-
 .dashboard {
+    webkit-filter: blur(3px) !important;
     margin-left: 300px;
     position: fixed;
     height: 100%;
     width: 100%;
+    background-image: url("./images/insurance.jpg");
+    background-size: contain
 }

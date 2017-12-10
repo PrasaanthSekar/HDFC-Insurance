@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 import ChatBox from './ChatBox/chatbox.js';
 import Landing from './Landing/landing.js';
 import './App.css';
-import Dashboard from './Dashboard/Dashboard.js'
+import Dashboard from './Dashboard/Dashboard.js';
+import PolicyInfo from './PolicyInfo/policyinfo.js'
 
 const styles ={
   appstyle:{
@@ -17,14 +18,14 @@ const styles ={
     height:50
   }
 }
-class App extends Component {
-  
+class App extends Component {  
   render() {
       let {currrentPage,dispatch} = this.props;
       let body;
       switch(currrentPage){
         case 'index':
-         body = <Landing dispatch={dispatch}/>
+        //  body = <Landing dispatch={dispatch}/>
+         body = <PolicyInfo dispatch={dispatch}/>
          break;
         case 'dashboard':
           body =  <div className='chat_body'><ChatBox /><Dashboard /></div>
