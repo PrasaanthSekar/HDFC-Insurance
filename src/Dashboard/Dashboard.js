@@ -10,11 +10,12 @@ import marriedCouple from './images/marriedCouple.png';
 import marriedCoupleWithChildren from './images/marriedcouplewithchildren.png';
 import marriedcouplewithhouseloan from './images/marriedcouplewithhouseloan.png';
 import RaisedButton from 'material-ui/RaisedButton';
+import {changePage} from '../Actions/dashboardAction'
 import './index.css'
 
 class DashBoard extends Component {
   render() {
-    let { parameters ,actionIncomplete} = this.props
+    let { parameters ,actionIncomplete,dispatch} = this.props
     let display = null;
     if (parameters !== null) {
       if (parameters.gender === "male") {
@@ -40,7 +41,7 @@ class DashBoard extends Component {
       <Paper zDepth={1} className='dashboard'>
         {display}
         <Paper zDepth={1} className='info_footer'>
-          {actionIncomplete ? null : <RaisedButton label="NEXT" className='next-button' primary={true}  />}
+          {actionIncomplete ? null : <RaisedButton label="NEXT" className='next-button' onClick = {()=> dispatch(changePage('policyInfo'))} primary={true}  />}
         </Paper>
       </Paper>
     );
