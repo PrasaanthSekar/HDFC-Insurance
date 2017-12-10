@@ -4,17 +4,20 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import { connect } from 'react-redux';
 import './animate.min.css';
-
+import single from './images/single.png';
+import women from './images/women.png';
+// import marriedCouple from './images/marriedCouple.png';
+import marriedCoupleWithChildren from './images/marriedcouplewithchildren.png';
+import marriedcouplewithhouseloan from './images/marriedcouplewithhouseloan.png'
 import './index.css'
 
 class DashBoard extends Component {
   render() {
     let { parameters } = this.props
-    console.log(parameters);
     let display = null;
     if (parameters !== null) {
       if (parameters.gender === "male") {
-        display = <div className='singlemale bounceIn'></div>
+        display = <img src={single} className="animated bounce" />
       } else if (parameters.gender === "female") {
         display = <div className='singlefemale'></div>
       }
