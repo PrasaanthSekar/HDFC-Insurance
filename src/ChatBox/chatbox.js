@@ -17,8 +17,10 @@ class ChatBox extends Component {
     let { value } = this.state;
     let { dispatch, messages } = this.props;
     dispatch(sendMessage(messages, value));
-    var objDiv = document.getElementById("style-2");
-    objDiv.scrollTop = objDiv.scrollHeight + 22;
+    setTimeout(function(){ 
+      var objDiv = document.getElementById("style-2");
+      objDiv.scrollTop = objDiv.scrollHeight + 22;
+    }, 500);
     this.setState({
       value: '',
     })
