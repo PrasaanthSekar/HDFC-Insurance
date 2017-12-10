@@ -41,7 +41,7 @@ class DashBoard extends Component {
       <Paper zDepth={1} className='dashboard'>
         {display}
         <Paper zDepth={1} className='info_footer'>
-          {actionIncomplete ? null : <RaisedButton label="NEXT" className='next-button' onClick = {()=> dispatch(changePage('policyInfo'))} primary={true}  />}
+          {actionIncomplete ? null : <RaisedButton label="NEXT" parameters ={parameters} className='next-button' onClick = {()=> dispatch(changePage('policyInfo'))} primary={true}  />}
         </Paper>
       </Paper>
     );
