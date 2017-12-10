@@ -20,14 +20,15 @@ export function changePage(currrentPage) {
 function addMessage(message) {
     return {
         type: ADD_MESSAGE,
-        message,
+        message
     }
 }
 
-function changeImage(parameters){
+function changeImage(actionIncomplete,parameters){
     return {
         type: CHANGE_IMAGE,
         parameters,
+        actionIncomplete
     }
 }
 export function sendMessage(message,value){
@@ -46,8 +47,13 @@ export function sendMessage(message,value){
       .then(function (response) {
         if (response.status === 200) {
           response.json().then(function(data) {
+            let actionIncomplete = true;
+            if(data.result.action === "policyInfo"){
+                actionIncomplete = data.result.actionIncomplete === true ;
+            }
+            
             dispatch(addMessage([...message,new Message({ id: 0, message: value }),new Message({ id: 1, message: data.result.fulfillment.speech })]))
-            dispatch(changeImage(data.result.parameters))
+            dispatch(changeImage(actionIncomplete,data.result.parameters))
          })
         }
      })

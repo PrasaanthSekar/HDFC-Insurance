@@ -8,12 +8,13 @@ import single from './images/single.png';
 import women from './images/women.png';
 import marriedCouple from './images/marriedCouple.png';
 import marriedCoupleWithChildren from './images/marriedcouplewithchildren.png';
-import marriedcouplewithhouseloan from './images/marriedcouplewithhouseloan.png'
+import marriedcouplewithhouseloan from './images/marriedcouplewithhouseloan.png';
+import RaisedButton from 'material-ui/RaisedButton';
 import './index.css'
 
 class DashBoard extends Component {
   render() {
-    let { parameters } = this.props
+    let { parameters ,actionIncomplete} = this.props
     let display = null;
     if (parameters !== null) {
       if (parameters.gender === "male") {
@@ -38,13 +39,16 @@ class DashBoard extends Component {
     return (
       <Paper zDepth={1} className='dashboard'>
         {display}
+        <Paper zDepth={1} className='info_footer'>
+          {actionIncomplete ? null : <RaisedButton label="NEXT" className='next-button' primary={true}  />}
+        </Paper>
       </Paper>
     );
   }
 }
 function mapStateToProps(state) {
   const { dashBoardReducers } = state
-  const { parameters } = dashBoardReducers;
-  return { parameters }
+  const { parameters ,actionIncomplete} = dashBoardReducers;
+  return { parameters,actionIncomplete }
 }
 export default connect(mapStateToProps)(DashBoard);
