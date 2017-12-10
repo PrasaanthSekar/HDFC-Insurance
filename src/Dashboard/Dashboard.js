@@ -27,8 +27,11 @@ class DashBoard extends Component {
       if(parameters.status === "married"){
         display = <img src={marriedCouple} className="animated bounce cartoon_img" />
       }
-      if(parameters.child != null){
+      if(parameters.child != ""){
         display = <img src={marriedCoupleWithChildren} className="animated bounce cartoon_img" />
+      }
+      if(parameters.homeloan != ""){
+        display = <img src={marriedcouplewithhouseloan} className="animated bounce cartoon_img" />
       }
     }
 
