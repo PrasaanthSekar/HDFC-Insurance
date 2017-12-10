@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import { ChatFeed, Message } from 'react-chat-ui'
 import AppBar from 'material-ui/AppBar';
 import {connect} from 'react-redux';
